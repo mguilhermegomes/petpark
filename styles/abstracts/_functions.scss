@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "variables" as v;
+
+@function get-color($type, $color) {
+  @return map.get(map.get(v.$colors, $type), $color);
+}
+
+@function font-family($font) {
+    @return map.get(map.get(v.$typography, $font), family);
+}
+
+@function font-size($family, $size) {
+    @return map.get(map.get(map.get(v.$typography, $family), sizes), $size);
+}
+
+@function font-weight($weight) {
+    @return map.get(v.$weights, $weight);
+}
+
+@function breakpoint($breakpoint) {
+    @return map.get(v.$breakpoints, $breakpoint);
+}

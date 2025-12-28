@@ -1,0 +1,53 @@
+$colors: (
+  neutros: (
+    cinza-escuro: #444444,
+    cinza-medio: #b9b9b9,
+    branco: #ffffff
+  ),
+  primarios: (
+    coral: #ee6451,
+    ocre: #c13724
+  ),
+  secundarios: (
+    bege: #fff5eb,
+    bege-medio: #f5e6d6
+  ),
+  terciarios: (
+    verde: #cbda74,
+    verde-escuro: #a2b72b,
+    verde-claro: #eff2e1
+  )
+);
+
+$weights: (
+  regular: 400,
+  medium: 500,
+  bold: 700
+);
+
+$breakpoints: (
+  mobile: 428px,
+  tablet: 760px,
+  desktop: 1200px
+);
+
+$typography: (
+  sigmar: (
+    family: ("Sigmar", sans-serif),
+    sizes: (
+      h1: 4.5rem,
+      h2: 2.635rem,
+      h3: 2.438rem,
+      h4: 1.938rem,
+      h5: 1.563rem
+    )
+  ),
+  poppins: (
+    family: ("Poppins", sans-serif),
+    sizes: (
+      medium: 1.25rem,
+      base: 1rem,
+      small: 0.813rem
+    )
+  )
+);

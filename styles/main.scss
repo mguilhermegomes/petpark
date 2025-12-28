@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "./abstracts/index" as *;
+
+//cabecalho
+@use "./principal/header";
+
+//sections
+
+
+//rodape
+@use "./principal/footer";
+
+//----------------------------------------------------------------------------------------------------------------
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: get-color(neutros, branco);
+    color: get-color(neutros, cinza-escuro);
+    line-height: 1.5;
+    width: 100%;
+    min-height: 100vh;
+    @include font-config(poppins, base)
+}
