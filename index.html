@@ -1,19 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Petpark</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Sigmar&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="cabecalho"></header>
-    <main></main>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Sigmar&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="cabecalho__principal container">
+        <div class="cabecalho__container__logo">
+          <img
+            src="assets/Logo.svg"
+            alt="Logo Petpark"
+            class="cabecalho__logo"
+          />
+        </div>
+        <form class="cabecalho__form">
+          <input
+            type="search"
+            class="cabecalho__pesquisa"
+            id="input-pesquisa"
+            placeholder="O que você procura?"
+          />
+        </form>
+        <button class="cabecalho__menu" id="menu-hamburguer">
+          <img src="assets/header/menu-hamburguer.png" alt="Menu hamburguer" />
+        </button>
+        <button class="login-cadastro" id="botao__login-cadastro">
+          <img src="assets/header/login.svg" alt="Símbolo de login" />
+          Login/Cadastro
+        </button>
+      </div>
+      <nav class="cabecalho__nav container">
+        <a href="#" class="nav-link">
+          <span>Raças</span>
+        </a>
+        <a href="#" class="nav-link">Plano Pet</a>
+        <a href="#" class="nav-link">Serviços</a>
+        <a href="#" class="nav-link">Sobre nós</a>
+        <a href="#" class="nav-link">Clube de descontos</a>
+      </nav>
+      <button class="cabecalho__menu__fechar" id="menu-fechar">
+        <img src="assets/header/close.png" alt="Fechar" />
+      </button>
+    </header>
+    <main>
+      <section class="banner">
+        <div class="container">
+          <h2 class="banner__titulo">
+            Seu melhor amigo,
+            <span>nosso maior cuidado!</span>
+          </h2>
+          <img
+            class="banner__img"
+            src="assets/banner/Imagem Hero.png"
+            alt="Imagem Hero | Cachorro e gato"
+          />
+        </div>
+      </section>
+    </main>
     <footer class="rodape"></footer>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>

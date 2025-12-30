@@ -5,7 +5,7 @@
 @use "./principal/header";
 
 //sections
-
+@use "./sections/banner";
 
 //rodape
 @use "./principal/footer";
@@ -14,13 +14,27 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: get-color(neutros, branco);
     color: get-color(neutros, cinza-escuro);
-    line-height: 1.5;
     width: 100%;
     min-height: 100vh;
-    @include font-config(poppins, base)
+    @include font-config(poppins, base, regular, 1.5);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 75rem;
+    padding-inline: 1.5rem;
+    margin-inline: auto;
 }

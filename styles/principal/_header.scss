@@ -1,0 +1,165 @@
+@use "sass:map";
+@use "../abstracts/index" as *;
+
+.cabecalho {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 2rem;
+    margin-bottom: 2.5rem;
+
+    .cabecalho__principal {
+        display: grid;
+        grid-template-columns: auto 50% .5fr;
+        justify-content: space-between;
+        align-items: center;
+        @include responsive(tablet) {
+            //responsividade
+            row-gap: 24px;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: repeat(2, auto);
+            grid-template-areas:
+            "logo logincadastro"
+            "input input";
+
+            @include grid-area-element("cabecalho__container__logo", logo);
+            @include grid-area-element("login-cadastro", logincadastro);
+            @include grid-area-element("cabecalho__form", input);
+        }
+        @include responsive(header-mobile) {
+            //responsividade
+            grid-template-rows: repeat(3, auto);
+            grid-template-areas:
+            "logo logo"
+            "menu logincadastro"
+            "input input";
+
+            @include grid-area-element("cabecalho__menu", menu)
+        }
+
+        .cabecalho__container__logo {
+            @include responsive(header-mobile) {
+                //responsividade | alinha a logo ao centro
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        form {
+            .cabecalho__pesquisa {   
+                background-image: url("/assets/header/search.svg");
+                background-repeat: no-repeat;
+                background-position: 95% center;
+                color: get-color(neutros, cinza-escuro);
+                border: 1.5px solid get-color(neutros, cinza-escuro);
+                border-radius: 32px;
+                padding: 0.5rem 1rem;
+                width: 100%;
+
+                &:focus {
+                    //aumenta o tamanho da borda para melhor acessebilidade
+                    outline: none;
+                    border-width: 2px;
+                }
+            }
+        }
+
+        .cabecalho__menu {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            @include responsive(header-mobile) {
+                //responsividade | torna visivel o menu hamburguer
+                display: block;
+            }
+        }
+
+        .login-cadastro {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+            background-color: get-color(neutros, branco);
+            color: get-color(neutros, cinza-escuro);
+            border: none;
+            cursor: pointer;
+            @include font-config(poppins, large);
+        }
+    }
+
+    .cabecalho__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        @include responsive(header-mobile) {
+            //responsividade
+            display: none;
+        }
+        
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: get-color(neutros, cinza-escuro);
+            @include font-config(poppins, large);
+
+            &::after {
+                //cria uma barra abaixo do link
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 100%;
+                width: 0;   //barra invisivel por padrão
+                height: 2px;
+                background-color: get-color(neutros, cinza-escuro);
+                transition: width 0.3s;
+            }
+
+            &:hover::after,
+            &:focus::after {
+                //torna a barra visivel quando o mouse está por cima do link ou selecionado
+                width: 100%;
+            }
+        }
+    }
+
+    .nav__aberto {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: get-color(neutros, branco);
+        width: 14rem;
+        padding: 0.8rem 1.5rem;
+        top: 0;
+        left: 0;
+        box-shadow: 0 4px 24px 0 get-color(neutros, cinza-medio);
+
+        .nav-link {
+            @include font-config(poppins, base);
+
+            span {
+                color: get-color(primarios, ocre);
+                @include font-config(poppins, base, semibold);
+            }
+        }
+    }
+
+    .cabecalho__menu__fechar {
+        position: absolute;
+        display: none;
+        background: none;
+        border: none;
+        width: 30px;
+        height: 30px;
+        top: 0.5rem;
+        left: 11.5rem;
+        cursor: pointer;
+    }
+}
+
+.menu-aberto > .cabecalho__menu__fechar {
+    display: block;
+}

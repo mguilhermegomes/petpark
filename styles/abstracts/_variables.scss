@@ -22,13 +22,15 @@ $colors: (
 $weights: (
   regular: 400,
   medium: 500,
-  bold: 700
+  semibold: 600,
+  bold: 700,
 );
 
 $breakpoints: (
   mobile: 428px,
-  tablet: 760px,
-  desktop: 1200px
+  tablet: 768px,
+  desktop: 1200px,
+  header-mobile: 680px,
 );
 
 $typography: (
@@ -36,16 +38,17 @@ $typography: (
     family: ("Sigmar", sans-serif),
     sizes: (
       h1: 4.5rem,
-      h2: 2.635rem,
-      h3: 2.438rem,
-      h4: 1.938rem,
-      h5: 1.563rem
+      h2: 4rem,
+      h3: 2.635rem,
+      h4: 2.438rem,
+      h5: 1.938rem,
+      h6: 1.563rem,
     )
   ),
   poppins: (
     family: ("Poppins", sans-serif),
     sizes: (
-      medium: 1.25rem,
+      large: 1.25rem,
       base: 1rem,
       small: 0.813rem
     )
