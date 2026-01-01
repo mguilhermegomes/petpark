@@ -3,7 +3,7 @@
 
 .banner {
     background-color: get-color(secundarios, bege);
-    padding: 3rem 0;
+    padding: 3.5rem 0;
 
     .container {
         display: flex;
@@ -17,12 +17,12 @@
 
         .banner__titulo {
             color: get-color(primarios, coral);
-            @include font-config(sigmar, h2, regular, 1.3);
+            @include font-config(sigmar, h2);
             @include responsive(tablet) {
-                @include font-config(sigmar, h3, regular, 1.3);
+                @include font-config(sigmar, h3);
             }
             @include responsive(mobile) {
-                @include font-config(sigmar, h4, regular, 1.3)
+                @include font-config(sigmar, h4);
             }
 
             span {

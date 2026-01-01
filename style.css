@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .cabecalho {
   position: relative;
   display: flex;
@@ -80,7 +81,6 @@
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   font-size: 1.25rem;
-  line-height: 1.5;
 }
 .cabecalho .cabecalho__nav {
   display: flex;
@@ -99,7 +99,6 @@
   color: #444444;
   font-family: "Poppins", sans-serif;
   font-size: 1.25rem;
-  line-height: 1.5;
 }
 .cabecalho .cabecalho__nav .nav-link::after {
   content: "";
@@ -109,7 +108,7 @@
   width: 0;
   height: 2px;
   background-color: #444444;
-  transition: width 0.3s;
+  transition: width 0.3s ease;
 }
 .cabecalho .cabecalho__nav .nav-link:hover::after, .cabecalho .cabecalho__nav .nav-link:focus::after {
   width: 100%;
@@ -129,14 +128,12 @@
 .cabecalho .nav__aberto .nav-link {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  line-height: 1.5;
 }
 .cabecalho .nav__aberto .nav-link span {
   color: #c13724;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  line-height: 1.5;
 }
 .cabecalho .cabecalho__menu__fechar {
   position: absolute;
@@ -156,7 +153,7 @@
 
 .banner {
   background-color: #fff5eb;
-  padding: 3rem 0;
+  padding: 3.5rem 0;
 }
 .banner .container {
   display: flex;
@@ -173,27 +170,99 @@
   color: #ee6451;
   font-family: "Sigmar", sans-serif;
   font-size: 4rem;
-  font-weight: 400;
-  line-height: 1.3;
 }
 @media screen and (max-width: 768px) {
   .banner .container .banner__titulo {
     font-family: "Sigmar", sans-serif;
     font-size: 2.635rem;
-    font-weight: 400;
-    line-height: 1.3;
   }
 }
 @media screen and (max-width: 428px) {
   .banner .container .banner__titulo {
     font-family: "Sigmar", sans-serif;
     font-size: 2.438rem;
-    font-weight: 400;
-    line-height: 1.3;
   }
 }
 .banner .container .banner__titulo span {
   color: #a2b72b;
+}
+
+.servicos {
+  margin: 5rem 0;
+}
+.servicos .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 80px;
+}
+.servicos .container .servicos__titulo {
+  color: #ee6451;
+  font-family: "Sigmar", sans-serif;
+  font-size: 2.438rem;
+}
+.servicos .container .servicos__lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.servicos .container .servicos__lista .lista-item {
+  background-color: #fff5eb;
+  border-radius: 16px;
+  padding: 1.75rem 1rem;
+}
+@media screen and (max-width: 1200px) {
+  .servicos .container .servicos__lista .lista-item {
+    min-width: 220px;
+  }
+}
+.servicos .container .servicos__lista .lista-item .lista-item__link {
+  position: relative;
+  text-decoration: none;
+  color: #ee6451;
+  transition: padding-left 0.3s ease;
+  font-family: "Sigmar", sans-serif;
+  font-size: 1.563rem;
+}
+.servicos .container .servicos__lista .lista-item .lista-item__link::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  bottom: 50%;
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(0);
+  transition: transform 0.3s ease, left 0.3s ease;
+}
+@media screen and (min-width: 1200px) {
+  .servicos .container .servicos__lista .lista-item .lista-item__link:hover {
+    padding-left: 2.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .servicos .container .servicos__lista .lista-item .lista-item__link:hover::before {
+    transform: scale(1) translateY(50%);
+    left: 0px;
+  }
+}
+.servicos .container .servicos__lista .lista-item__banhoetosa > .lista-item__link::before {
+  background-image: url("/assets/servicos/Ícone-banho-e-tosa.png");
+}
+.servicos .container .servicos__lista .lista-item__hospedagem > .lista-item__link::before {
+  background-image: url("/assets/servicos/Ícone-hospedagem.svg");
+}
+.servicos .container .servicos__lista .lista-item__veterinario > .lista-item__link::before {
+  background-image: url("/assets/servicos/icone-veterinário.svg");
+}
+.servicos .container .servicos__lista .lista-item__adestramento > .lista-item__link::before {
+  background-image: url("/assets/servicos/icone-adestramento.svg");
+}
+.servicos .container .servicos__lista .lista-item__petsitter > .lista-item__link::before {
+  background-image: url("/assets/servicos/Ícone-Petsitter.svg");
 }
 
 * {
@@ -205,12 +274,11 @@
 body {
   background-color: #ffffff;
   color: #444444;
+  line-height: 1.2;
   width: 100%;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
 }
 
 img {

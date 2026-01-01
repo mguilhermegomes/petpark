@@ -1,0 +1,76 @@
+@use "sass:map";
+@use "../abstracts/index" as *;
+
+.servicos {
+    margin: 5rem 0;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 80px;
+
+        .servicos__titulo {
+            color: get-color(primarios, coral);
+            @include font-config(sigmar, h4);
+        }
+
+        .servicos__lista {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+
+            .lista-item {
+                background-color: get-color(secundarios, bege);
+                border-radius: 16px;
+                padding: 1.75rem 1rem;
+                @include responsive(desktop) {
+                    min-width: 220px;
+                }
+                
+
+                .lista-item__link {
+                    position: relative;
+                    text-decoration: none;
+                    color: get-color(primarios, coral);
+                    transition: padding-left 0.3s ease;
+                    @include font-config(sigmar, h6);
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: -30px;
+                        bottom: 50%;
+                        width: 35px;
+                        height: 35px;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        transform: scale(0);
+                        transition: transform 0.3s ease, left 0.3s ease;
+                    }
+
+                    &:hover {
+                        @include responsive(desktop, "min") {
+                            padding-left: 2.5rem;
+                        }
+                    }
+
+                    &:hover::before {
+                        @include responsive(desktop, "min") {
+                            transform: scale(1) translateY(50%);
+                            left: 0px;
+                        }
+                    }
+                }
+            }
+
+            @include servicos-item-img("banhoetosa", url("/assets/servicos/Ícone-banho-e-tosa.png"));
+            @include servicos-item-img("hospedagem", url("/assets/servicos/Ícone-hospedagem.svg"));
+            @include servicos-item-img("veterinario", url("/assets/servicos/icone-veterinário.svg"));
+            @include servicos-item-img("adestramento", url("/assets/servicos/icone-adestramento.svg"));
+            @include servicos-item-img("petsitter", url("/assets/servicos/Ícone-Petsitter.svg"));
+        }
+    }
+}

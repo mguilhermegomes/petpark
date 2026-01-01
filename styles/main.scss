@@ -6,6 +6,7 @@
 
 //sections
 @use "./sections/banner";
+@use "./sections/servicos";
 
 //rodape
 @use "./principal/footer";
@@ -21,9 +22,10 @@
 body {
     background-color: get-color(neutros, branco);
     color: get-color(neutros, cinza-escuro);
+    line-height: 1.2;
     width: 100%;
     min-height: 100vh;
-    @include font-config(poppins, base, regular, 1.5);
+    @include font-config(poppins, base);
 }
 
 img {

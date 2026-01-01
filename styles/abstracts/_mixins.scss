@@ -2,11 +2,10 @@
 @use "./variables" as v;
 @use "./functions" as f;
 
-@mixin font-config($font-family, $font-size, $font-weight: map.get(v.$weights, regular), $line-height: 1.5) {
+@mixin font-config($font-family, $font-size, $font-weight: map.get(v.$weights, regular)) {
     font-family: f.font-family($font-family);
     font-size: f.font-size($font-family, $font-size);
     font-weight: f.font-weight($font-weight);
-    line-height: $line-height;
 }
 
 @mixin responsive($breakpoint, $type: "max") {
@@ -18,5 +17,11 @@
 @mixin grid-area-element($class, $grid-area) {
     .#{$class} {
         grid-area: $grid-area;
+    }
+}
+
+@mixin servicos-item-img($item, $img-caminho) {
+    .lista-item__#{$item}>.lista-item__link::before {
+        background-image: $img-caminho;
     }
 }
