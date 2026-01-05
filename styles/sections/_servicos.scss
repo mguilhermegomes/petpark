@@ -2,7 +2,7 @@
 @use "../abstracts/index" as *;
 
 .servicos {
-    margin: 5rem 0;
+    margin-top: 5rem;
 
     .container {
         display: flex;
@@ -14,6 +14,9 @@
         .servicos__titulo {
             color: get-color(primarios, coral);
             @include font-config(sigmar, h4);
+            @include responsive(mobile) {
+                @include font-config(sigmar, h5);
+            }
         }
 
         .servicos__lista {

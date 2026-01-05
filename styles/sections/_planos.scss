@@ -1,0 +1,74 @@
+@use "sass:map";
+@use "../abstracts/index" as *;
+
+.planos {
+    margin-top: 8rem;
+
+    .planos__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        background-color: get-color(primarios, coral);
+        border-radius: 32px;
+        padding: 2.5rem 1rem;
+
+        .container__titulo {
+            text-align: center;
+            color: get-color(secundarios, bege);
+            @include font-config(sigmar, h4);
+            @include responsive(mobile) {
+                @include font-config(sigmar, h5);
+            }
+        }
+
+        .planos__lista {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+
+            .lista-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 16px;
+                background-color: get-color(neutros, branco);
+                border-radius: 16px;
+                padding: 1rem;
+
+                .lista-item__titulo {
+                    color: get-color(neutros, cinza-escuro);
+                    @include font-config(sigmar, h5);
+                }
+
+                .lista-item__descricao {
+                    max-width: 265px;
+                }
+
+                .valor-assinar {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 8px;
+
+                    .valor {
+                        color: get-color(primarios, coral);
+                        @include font-config(sigmar, h4);
+                    }
+
+                    .assinar {
+                        background-color: get-color(primarios, coral);
+                        color: get-color(neutros, branco);
+                        border-radius: 32px;
+                        border: none;
+                        padding: 0.5rem 1.5rem;
+                        cursor: pointer;
+                        @include font-config(poppins, large, semibold);
+                    }
+                }
+            }
+        }
+    }
+}
