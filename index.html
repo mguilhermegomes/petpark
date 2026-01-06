@@ -20,6 +20,10 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="assets/Favicon.svg" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <header class="cabecalho">
@@ -130,8 +134,90 @@
           </ul>
         </div>
       </section>
+      <section class="ofertas">
+        <h2 class="ofertas__titulo">Super ofertas:</h2>
+        <!-- Slider main container -->
+        <div class="swiper ofertas__container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper ofertas__produtos container">
+            <!-- Slides -->
+            <div class="swiper-slide ofertas__produto">
+              <img src="assets/ofertas/Biskrok.png" alt="Ração Biscrok Pedigree">
+              <div class="produto__info">
+                <h3 class="info__titulo">Biscoito Pedigree Biscrok</h3>
+                <p class="info__descricao">Multi para Cães Adultos 500g</p>
+                <span class="info__preco">R$ 19,99</span>
+              </div>
+            </div>
+            <div class="swiper-slide ofertas__produto">
+              <img src="assets/ofertas/Golden Special.png" alt="Ração Golden Special">
+              <div class="produto__info">
+                <h3 class="info__titulo">Ração Golden Special</h3>
+                <p class="info__descricao">Cães Adultos Sabor Frango e Carne 15kg</p>
+                <span class="info__preco">R$ 149,00</span>
+              </div>
+            </div>
+            <div class="swiper-slide ofertas__produto">
+              <img src="assets/ofertas/Pipicat.png" alt="Areia Higiênica Pipicat">
+              <div class="produto__info">
+                <h3 class="info__titulo">Areia Higiênica Pipicat</h3>
+                <p class="info__descricao">Classic para gatos 4Kg</p>
+                <span class="info__preco">R$ 45,00</span>
+              </div>
+            </div>
+            <div class="swiper-slide ofertas__produto">
+              <img src="assets/ofertas/Arranhador.png" alt="Arranhador São Benedito Pet">
+              <div class="produto__info">
+                <h3 class="info__titulo">Arranhador São Benedito Pet</h3>
+                <p class="info__descricao">Redondo com pluma e mola rosa</p>
+                <span class="info__preco">R$ 59,90</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev">
+            <img src="assets/ofertas/arrow_back.png" alt="Voltar">
+          </div>
+          <div class="swiper-button-next">
+            <img src="assets/ofertas/arrow_forward.png" alt="Avançar">
+          </div>
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+    </section>
     </main>
     <footer class="rodape"></footer>
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper', {
+      slidesPerView: "auto",
+      spaceBetween: 24,
+
+      watchOverflow: true,
+      
+        // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+    </script>
   </body>
 </html>

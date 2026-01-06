@@ -48,9 +48,10 @@ $typography: (
   poppins: (
     family: ("Poppins", sans-serif),
     sizes: (
+      subtitle: 1.5rem,
       large: 1.25rem,
       base: 1rem,
-      small: 0.813rem
+      small: 0.813rem,
     )
   )
 );
