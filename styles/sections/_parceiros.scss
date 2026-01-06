@@ -11,6 +11,9 @@
             margin-bottom: 2.5rem;
             color: get-color(primarios, coral);
             @include font-config(sigmar, h4);
+            @include responsive(mobile) {
+                @include font-config(sigmar, h5);
+            }
         }
 
         .parceiros__lista {

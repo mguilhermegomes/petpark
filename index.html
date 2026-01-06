@@ -233,6 +233,39 @@
         </ul>
       </div>
     </section>
+    <section class="newsletter">
+      <div class="container">
+        <h2 class="newsletter__titulo">Assine nossa newsletter!</h2>
+        <p class="newsletter__descricao">Cadastre-se e receba nossas promoções e novidades!</p>
+      </div>
+      <form id="form-newsletter" class="newsletter__assinar container">
+        <label for="newsletter-email">
+          <input type="email" name="email" class="assinar__email" id="newsletter-email" placeholder="Insira seu endereço de email" required>
+        </label>
+        <div class="newsletter__opcoes">
+          <span>Selecione seu pet:</span>
+          <label for="newsletter-opcao-gato" class="opcao">
+            <input type="checkbox" name="opcao" id="newsletter-opcao-gato" class="opcao__gato" value="gato">Gato
+            <span></span>
+          </label>
+          <label for="newsletter-opcao-cao" class="opcao">
+            <input type="checkbox" name="opcao" id="newsletter-opcao-cao" class="opcao__cao" value="cao">Cão
+            <span></span>
+          </label>
+          <label for="newsletter-opcao-roedor" class="opcao">
+            <input type="checkbox" name="opcao" id="newsletter-opcao-roedor" class="opcao__roedor" value="roedor">Roedor
+            <span></span>
+          </label>
+          <label for="newsletter-opcao-outros" class="opcao">
+            <input type="checkbox" name="opcao" id="newsletter-opcao-outros" class="opcao__outros" value="outros">Outros
+            <span></span>
+          </label>
+        </div>
+        <label for="newsletter-botao-inscrever" class="opcao">
+          <button id="newsletter-botao-inscrever" class="assinar__botao">Inscrever</button>
+        </label>
+      </form>
+    </section>
     </main>
     <footer class="rodape"></footer>
     <script src="app.js"></script>

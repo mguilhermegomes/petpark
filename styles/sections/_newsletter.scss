@@ -1,0 +1,112 @@
+@use "sass:map";
+@use "../abstracts/index" as *;
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 5rem 0;
+    text-align: center;
+    background-color: get-color(secundarios, bege);
+
+    .container {
+        .newsletter__titulo {
+            margin-bottom: 1rem;
+            color: get-color(primarios, coral);
+            @include font-config(sigmar, h4);
+            @include responsive(mobile) {
+                @include font-config(sigmar, h5);
+            }
+        }
+
+        .newsletter__descricao {
+            @include font-config(poppins, large);
+        }
+    }
+
+    .newsletter__assinar {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        @include responsive(newsletter-tablet) {
+            grid-template-columns: none;
+            grid-template-rows: repeat(3, auto);
+            row-gap: 16px;
+        }
+
+        label > .assinar__email {
+            background-color: transparent;
+            border: 1px solid get-color(neutros, cinza-escuro);
+            border-radius: 32px;
+            padding: 0.5rem 0;
+            width: 100%;
+            text-align: center;
+
+            &::placeholder {
+                color: get-color(neutros, cinza-escuro);
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            &:user-valid {
+                border: 1.6px solid get-color(terciarios, verde-escuro);
+            }
+
+            &:focus:user-invalid {
+                border: 1.6px solid get-color(primarios, ocre);
+            }
+        }
+
+        .newsletter__opcoes {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+
+            > span {
+                margin-right: 1rem;
+            }
+
+            .opcao {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                cursor: pointer;
+                position: relative;
+
+                input[type="checkbox"] {
+                    opacity: 0;
+
+                    &:checked + span {
+                        background-color: get-color(primarios, coral);
+                    }
+                }
+
+                span {
+                    position: absolute;
+                    left: 0;
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid get-color(neutros, cinza-escuro);
+                    padding: 10px;
+                }
+            }
+        }
+
+        label > .assinar__botao {
+            background-color: get-color(primarios, coral);
+            color: get-color(neutros, branco);
+            border: none;
+            border-radius: 32px;
+            padding: 0.5rem 1.5rem;
+            width: 100%;
+            cursor: pointer;
+            @include font-config(poppins, large, semibold)
+        }
+    }
+}
