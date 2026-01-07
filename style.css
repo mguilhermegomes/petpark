@@ -555,6 +555,37 @@
   font-weight: 600;
 }
 
+.rodape {
+  padding: 2.5rem 0;
+}
+.rodape .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+@media screen and (max-width: 1200px) {
+  .rodape .container {
+    flex-direction: column;
+  }
+}
+.rodape .container .redes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rodape .container .redes .redes__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+@media screen and (max-width: 1200px) {
+  .rodape .container .redes .redes__nav {
+    justify-content: center;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

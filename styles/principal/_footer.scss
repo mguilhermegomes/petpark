@@ -1,0 +1,31 @@
+@use "../abstracts/index" as *;
+
+.rodape {
+    padding: 2.5rem 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        @include responsive(desktop) {
+            flex-direction: column;
+        }
+
+        .redes {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .redes__nav {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                @include responsive(desktop) {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
